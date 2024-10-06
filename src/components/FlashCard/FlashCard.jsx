@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./FlashCard.css";
 
-export default function FlashCard() {
+export default function FlashCard({ question, answer }) {
+  // Destructure the props object here
   const [isRotated, setIsRotated] = useState(false);
 
   const toggleCard = () => {
@@ -13,21 +14,11 @@ export default function FlashCard() {
       <div className={`flash-card-inner ${isRotated ? "rotate" : ""}`}>
         <div className="flash-card-question">
           <h1>Question</h1>
-          <p className="question-body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-            maiores sunt optio, voluptate iste saepe. Praesentium quasi
-            distinctio illum laboriosam? Pariatur perspiciatis at voluptatibus
-            commodi accusantium eaque quod minus explicabo?
-          </p>
+          <p className="question-body">{question}</p>
         </div>
         <div className="flash-card-answer">
           <h1>Answer</h1>
-          <p className="answer-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Consectetur iste voluptate deleniti quod neque omnis accusamus
-            nostrum iure dicta ex ratione voluptatem aperiam modi itaque
-            dolorem, vel fugit aliquam placeat.
-          </p>
+          <p className="answer-body">{answer}</p>
           <div>
             <button>Explain Answer?</button>
           </div>

@@ -1,12 +1,11 @@
-
 import Layout from "../components/Layout/Layout";
-
-import FlashCard from "../components/FlashCard/FlashCard";
+import FlashCardController from "../components/FlashCardController/FlashCardController";
+import { dataStructuresAlgosFlashCards } from "../assets/dsa-flash";
 
 export default function DSAPage() {
   return (
     <Layout>
-      <FlashCard />
+      <FlashCardController questionBank={dataStructuresAlgosFlashCards} />
     </Layout>
   );
 }

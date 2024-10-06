@@ -1,39 +1,44 @@
 .flash-card {
-  /* background-color: white;/ */
-  /* width: 300px;
-    height: 200px; */
-  /* border: 1px solid #f1f1f1; */
+  border: 1px solid #f1f1f1;
   border-radius: 16px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  padding: 16px;
 }
 
-/* This container is needed to position the front and back side */
 .flash-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
   text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+  display: flex;
 }
-
 
 .rotate {
-  transform: rotateY(180deg);
+  /* transform: rotateY(180deg); */
 }
 
 /* Position the front and back side */
 .flash-card-question,
 .flash-card-answer {
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
+  /* -webkit-backface-visibility: hidden; Safari */
+  /* backface-visibility: hidden; */
 }
 
-/* Style the back side */
-.flash-card-answer {
-  color: white;
-  transform: rotateY(180deg);
+.answer-body {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; /* Transition for both */
+}
+
+/* On hover, make the answer-body visible and fade in */
+.flash-card-answer:hover .answer-body {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out, visibility 0s; /* Visibility becomes instant */
+}
+
+/* Reset visibility and opacity when not hovering */
+.flash-card-answer:not(:hover) .answer-body {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; /* Delay hiding visibility */
 }
