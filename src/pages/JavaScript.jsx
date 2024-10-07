@@ -1,12 +1,11 @@
-
 import Layout from "../components/Layout/Layout";
+import FlashCardController from "../components/FlashCardController/FlashCardController";
+import { jsFlashCards } from "../assets/js-flash";
 
-import FlashCard from "../components/FlashCard/FlashCard";
-
-export default function JavaScriptPage() {
+export default function DSAPage() {
   return (
     <Layout>
-      <FlashCard />
+      <FlashCardController questionBank={jsFlashCards} />
     </Layout>
   );
 }

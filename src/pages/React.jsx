@@ -1,12 +1,11 @@
-
 import Layout from "../components/Layout/Layout";
+import FlashCardController from "../components/FlashCardController/FlashCardController";
+import { reactFlashCards } from "../assets/react-flash";
 
-import FlashCard from "../components/FlashCard/FlashCard";
-
-export default function ReactPage() {
+export default function DSAPage() {
   return (
     <Layout>
-      <FlashCard />
+      <FlashCardController questionBank={reactFlashCards} />
     </Layout>
   );
 }

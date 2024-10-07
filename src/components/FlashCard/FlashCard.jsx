@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./FlashCard.css";
 
 export default function FlashCard({ question, answer }) {
-  // Destructure the props object here
   const [isRotated, setIsRotated] = useState(false);
 
   const toggleCard = () => {
