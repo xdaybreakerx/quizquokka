@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+
 import {
   Card,
   CardContent,
@@ -7,6 +8,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import { AnswerAlert } from "../ExplainAnswer/ExplainAnswer";
 
 export default function FlashCard({
   question,
@@ -46,7 +49,7 @@ export default function FlashCard({
             </div>
           </CardContent>
           <CardFooter>
-            <Button>ELi5?</Button>
+            <AnswerAlert />
           </CardFooter>
         </Card>
       </TabsContent>
