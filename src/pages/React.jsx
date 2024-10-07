@@ -5,6 +5,7 @@ import { reactFlashCards } from "../assets/react-flash";
 export default function DSAPage() {
   return (
     <Layout>
+      <h1 className="text-4xl uppercase font-bold p-8 text-left">React</h1>
       <FlashCardController questionBank={reactFlashCards} />
     </Layout>
   );
