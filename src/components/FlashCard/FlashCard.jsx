@@ -1,31 +1,55 @@
-import { useState } from "react";
-import "./FlashCard.css";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export default function FlashCard({ question, answer }) {
-  const [isRotated, setIsRotated] = useState(false);
-
-  const toggleCard = () => {
-    setIsRotated(!isRotated);
-  };
-
+export default function FlashCard({
+  question,
+  answer,
+  activeTab,
+  setActiveTab,
+}) {
   return (
-    <div className="flash-card">
-      <div className={`flash-card-inner ${isRotated ? "rotate" : ""}`}>
-        <div className="flash-card-question">
-          <h1>Question</h1>
-          <p className="question-body">{question}</p>
-        </div>
-        <div className="flash-card-answer">
-          <h1>Answer</h1>
-          <p className="answer-body">{answer}</p>
-          <div>
-            <button>Explain Answer?</button>
-          </div>
-        </div>
-      </div>
-      <button onClick={toggleCard}>
-        {isRotated ? "Show Question" : "Show Answer"}
-      </button>
-    </div>
+    <Tabs value={activeTab} onValueChange={setActiveTab} className="w-[400px]">
+      <TabsList className="grid w-full grid-cols-2">
+        <TabsTrigger value="question">Question</TabsTrigger>
+        <TabsTrigger value="answer">Answer</TabsTrigger>
+      </TabsList>
+
+      <TabsContent value="question">
+        <Card>
+          <CardHeader>
+            <CardTitle>Question</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <div className="space-y-1">
+              <p className="question-body">{question}</p>
+            </div>
+          </CardContent>
+          <CardFooter></CardFooter>
+        </Card>
+      </TabsContent>
+
+      <TabsContent value="answer">
+        <Card>
+          <CardHeader>
+            <CardTitle>Answer</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <div className="space-y-1">
+              <p className="question-body">{answer}</p>
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button>ELi5?</Button>
+          </CardFooter>
+        </Card>
+      </TabsContent>
+    </Tabs>
   );
 }
