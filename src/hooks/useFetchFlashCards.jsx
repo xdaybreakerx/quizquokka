@@ -5,7 +5,8 @@ import { db } from "@/firebase";
 export function useFetchFlashcards(collection, document) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0); // For progress bar
+  // For progress bar
+  const [progress, setProgress] = useState(0); 
 
   useEffect(() => {
     const fetchData = async () => {

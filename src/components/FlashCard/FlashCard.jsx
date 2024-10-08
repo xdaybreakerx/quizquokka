@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-
 import {
   Card,
   CardContent,
@@ -10,6 +8,9 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { AnswerAlert } from "@/components/ExplainAnswer/ExplainAnswer";
+
+import { useExplainAnswer } from "@/hooks/useGetExplanation";
+
 
 export default function FlashCard({
   question,
@@ -49,7 +50,7 @@ export default function FlashCard({
             </div>
           </CardContent>
           <CardFooter>
-            <AnswerAlert />
+            <AnswerAlert question={question} answer={answer}/>
           </CardFooter>
         </Card>
       </TabsContent>
