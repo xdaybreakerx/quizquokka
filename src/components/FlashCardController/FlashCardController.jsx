@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FlashCard from "../../components/FlashCard/FlashCard";
+import FlashCard from "@/components/FlashCard/FlashCard";
 import {
   Pagination,
   PaginationContent,

@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { AnswerAlert } from "../ExplainAnswer/ExplainAnswer";
+import { AnswerAlert } from "@/components/ExplainAnswer/ExplainAnswer";
 
 export default function FlashCard({
   question,

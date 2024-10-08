@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../firebase"; 
+import { db } from "@/firebase"; 
 
 export function useFetchFlashcards(collection, document) {
   const [data, setData] = useState([]);

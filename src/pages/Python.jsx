@@ -1,5 +1,5 @@
-import Layout from "../components/Layout/Layout";
-import FlashCardController from "../components/FlashCardController/FlashCardController";
+import Layout from "@/components/Layout/Layout";
+import FlashCardController from "@/components/FlashCardController/FlashCardController";
 import { ProgressBarWrapper } from "@/components/ProgressBarWrapper/ProgressBarWrapper";
 import { useFetchFlashcards } from "@/hooks/useFetchFlashCards";
 
