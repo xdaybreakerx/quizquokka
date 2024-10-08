@@ -43,10 +43,10 @@ export default function FlashCardController({ questionBank }) {
       <Pagination>
         <PaginationContent>
           <PaginationItem>
-            <PaginationPrevious href="#" onClick={prevCard} />
+            <PaginationPrevious onClick={prevCard} />
           </PaginationItem>
           <PaginationItem>
-            <PaginationNext href="#" onClick={nextCard} />
+            <PaginationNext onClick={nextCard} />
           </PaginationItem>
         </PaginationContent>
       </Pagination>
