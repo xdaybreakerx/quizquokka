@@ -18,7 +18,7 @@ export default function FlashCard({
   setActiveTab,
 }) {
   return (
-    <Tabs value={activeTab} onValueChange={setActiveTab} className="w-[400px]">
+    <Tabs value={activeTab} onValueChange={setActiveTab} className="w-[400px] min-h-[400px]">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="question">Question</TabsTrigger>
         <TabsTrigger value="answer">Answer</TabsTrigger>
