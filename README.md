@@ -23,7 +23,7 @@ Master your knowledge with engaging flashcards on Data Structures & Algorithms, 
 
 ## 📜 License
 
-This project is licensed under the [MIT license.](https://github.com/xdaybreakerx/quizquokka/LICENSE)
+This project is licensed under the [MIT license.](https://github.com/xdaybreakerx/quizquokka/blob/main/LICENSE)
 
 ## 🏃‍➡️ Run App Locally
 
