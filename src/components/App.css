@@ -5,3 +5,7 @@
   text-align: center;
   background-color: --background;
 } */
+
+html, body {
+  background-color: var(--background);
+}
