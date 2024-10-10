@@ -28,7 +28,7 @@ export function AnswerAlert({ question, answer }) {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Here's a simple explanation...</AlertDialogTitle>
+          <AlertDialogTitle className="text-foreground">Here's a simple explanation...</AlertDialogTitle>
           <AlertDialogDescription>
             {loading && <span>Loading explanation...</span>}
             {error && <span>Error: {error}</span>}
