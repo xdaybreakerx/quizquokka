@@ -15,8 +15,10 @@ Master your knowledge with engaging flashcards on Data Structures & Algorithms, 
 - **Component Library** - [ShadCN](https://ui.shadcn.com/)
 - **Icons** - [Radix UI](https://www.radix-ui.com/icons)
 - **LLM Integration** - [Llama 3](https://ai.meta.com/blog/meta-llama-3/) (via [Groq](https://console.groq.com/docs/quickstart))
-- **Database** - [Firestore Database](https://firebase.google.com/products/firestore/)
-- **Serverless Functions** - [Firebase Cloud Functions](https://firebase.google.com/products/functions/)
+- **Backend As A Service** - [Firebase](https://firebase.google.com/)
+  - **Database** - [Firestore Database](https://firebase.google.com/products/firestore/)
+  - **Serverless Functions** - [Firebase Cloud Functions](https://firebase.google.com/products/functions/)
+  - **Auth** - [Firebase Auth](https://firebase.google.com/docs/auth)
 - **Deployment** - [Netlify](https://www.netlify.com/)
 - **Code Formatting** - [Prettier](https://prettier.io/)
 - **Linting** - [ESLint](https://eslint.org)
@@ -52,3 +54,4 @@ All commands are run from the root of the project, from a terminal:
 - [x] theme toggle with choice selection that persists
 - [ ] authentication via firebase
   - [ ] users can upload their own cards
+- [ ] error boundary
