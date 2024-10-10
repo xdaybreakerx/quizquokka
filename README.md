@@ -13,6 +13,7 @@ Master your knowledge with engaging flashcards on Data Structures & Algorithms, 
 - **Main Framework** - [React](https://react.dev/)
 - **Styling** - [TailwindCSS](https://tailwindcss.com/)
 - **Component Library** - [ShadCN](https://ui.shadcn.com/)
+- **Icons** - [Radix UI](https://www.radix-ui.com/icons)
 - **LLM Integration** - [Llama 3](https://ai.meta.com/blog/meta-llama-3/) (via [Groq](https://console.groq.com/docs/quickstart))
 - **Database** - [Firestore Database](https://firebase.google.com/products/firestore/)
 - **Serverless Functions** - [Firebase Cloud Functions](https://firebase.google.com/products/functions/)
@@ -45,3 +46,9 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying     |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
+
+### To-do
+
+- [ ] theme toggle with choice selection that persists
+- [ ] authentication via firebase
+  - [ ] users can upload their own cards

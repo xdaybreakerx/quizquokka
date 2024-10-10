@@ -12,6 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 
 // Define the navigation items in an array
 const navigationItems = [
@@ -47,7 +48,7 @@ const questionTopics = [
 
 export default function Navigation() {
   return (
-    <nav className="flex justify-end">
+    <nav className="flex justify-end p-8">
       <NavigationMenu>
         <NavigationMenuList>
           {/* Render the "Home" navigation item */}
@@ -75,6 +76,9 @@ export default function Navigation() {
                 ))}
               </ul>
             </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <ThemeToggle/>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
