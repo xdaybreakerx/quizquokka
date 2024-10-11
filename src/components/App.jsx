@@ -11,6 +11,8 @@ import ReactPage from "@/pages/React";
 
 import LoginPage from "@/pages/Login";
 import SignUpPage from "@/pages/SignUp";
+import AddCardPage from "@/pages/AddCustomCard";
+import CustomCardPage from "@/pages/ViewCustomCards";
 
 const appRouter = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ const appRouter = createBrowserRouter([
   {
     path: "/react",
     element: <ReactPage />,
+  },
+  {
+    path: "/add-card",
+    element: <AddCardPage />,
+  },
+  {
+    path: "/view-custom-cards",
+    element: <CustomCardPage />
   },
 ]);
 function App() {

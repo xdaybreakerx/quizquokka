@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContextProvider";
 
 function CategoryCard({ title, description, link }) {
   return (
@@ -26,6 +27,8 @@ function CategoryCard({ title, description, link }) {
 }
 
 export default function HomePage() {
+  const { user } = useAuth();
+
   return (
     <Layout>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -63,6 +66,24 @@ export default function HomePage() {
             description="Dive deep into the most popular front-end library."
             link="/react"
           />
+          {user ? (
+            <CategoryCard
+              title="Add Custom Flash Cards"
+              description="Make studying easier by adding your own flash cards!"
+              link="/add-card"
+            />
+          ) : (
+            <></>
+          )}
+          {user ? (
+            <CategoryCard
+              title="View Custom Flash Cards"
+              description="Your very own custom flash cards!"
+              link="/view-custom-cards"
+            />
+          ) : (
+            <></>
+          )}
         </section>
       </div>
     </Layout>
