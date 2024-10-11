@@ -52,6 +52,6 @@ All commands are run from the root of the project, from a terminal:
 ### To-do
 
 - [x] theme toggle with choice selection that persists
-- [ ] authentication via firebase
+- [x] authentication via firebase
   - [ ] users can upload their own cards
 - [ ] error boundary
