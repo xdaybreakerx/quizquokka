@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { onAuthStateChanged, signOut } from "firebase/auth"; 
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "@/firebase";
 import { cn } from "@/lib/utils";
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,8 +12,9 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
+import { toast } from "react-toastify";
 
-// Define the navigation items in an array
+// Define the question topics navigation items in an array
 const questionTopics = [
   {
     title: "Data Structures & Algorithms",
@@ -52,8 +52,10 @@ export default function Navigation() {
     try {
       await signOut(auth);
       console.log("User signed out");
+      toast.success("User signed out successfully!");
     } catch (error) {
       console.error("Error signing out:", error);
+      toast.error("Error signing out!");
     }
   };
 
@@ -82,11 +84,26 @@ export default function Navigation() {
                     {topic.description}
                   </ListItem>
                 ))}
+                {/* Conditional rendering for custom flashcard links under Question Topics */}
+                {user && (
+                  <>
+                    <ListItem
+                      title="Add Custom Flash Cards"
+                      href="/add-card"
+                      description="Add your own custom flashcards."
+                    />
+                    <ListItem
+                      title="View Custom Flash Cards"
+                      href="/view-custom-cards"
+                      description="View your custom flashcards."
+                    />
+                  </>
+                )}
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          {/* Conditional Login/Sign Out Item */}
+          {/* Conditional rending for Login/Sign Out Item */}
           <NavigationMenuItem>
             {user ? (
               <button

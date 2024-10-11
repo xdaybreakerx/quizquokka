@@ -66,23 +66,21 @@ export default function HomePage() {
             description="Dive deep into the most popular front-end library."
             link="/react"
           />
-          {user ? (
-            <CategoryCard
-              title="Add Custom Flash Cards"
-              description="Make studying easier by adding your own flash cards!"
-              link="/add-card"
-            />
-          ) : (
-            <></>
-          )}
-          {user ? (
-            <CategoryCard
-              title="View Custom Flash Cards"
-              description="Your very own custom flash cards!"
-              link="/view-custom-cards"
-            />
-          ) : (
-            <></>
+
+          {/* Conditional rendering for custom flash cards */}
+          {user && (
+            <>
+              <CategoryCard
+                title="Add Custom Flash Cards"
+                description="Make studying easier by adding your own flash cards!"
+                link="/add-card"
+              />
+              <CategoryCard
+                title="View Custom Flash Cards"
+                description="Your very own custom flash cards!"
+                link="/view-custom-cards"
+              />
+            </>
           )}
         </section>
       </div>
