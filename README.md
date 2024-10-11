@@ -4,9 +4,11 @@ Master your knowledge with engaging flashcards on Data Structures & Algorithms, 
 
 ## 🔥 Features
 
-- [x] Responsive Design
 - [x] Flashcards on multiple topics
 - [x] AI integration for topic explanation
+- [x] Authentication from Email + Password, or via Google Sign In
+- [x] Authenticated Users can add and view custom flash cards
+- [x] Responsive Design
 
 ## 💻 Tech Stack and tools
 
@@ -49,9 +51,10 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
 
-### To-do
-
+<details>
+<summary>To-do</summary>
 - [x] theme toggle with choice selection that persists
 - [x] authentication via firebase
-  - [ ] users can upload their own cards
-- [ ] error boundary
+  - [x] users can upload their own cards
+- [x] error boundary and error page
+</details>
