@@ -1,7 +1,7 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { onAuthStateChanged, signOut } from "firebase/auth"; 
+import { auth } from "@/firebase";
 import { cn } from "@/lib/utils";
 
 import {
@@ -15,14 +15,6 @@ import {
 import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 
 // Define the navigation items in an array
-const navigationItems = [
-  {
-    title: "Home",
-    href: "/",
-    description: "Back to home page",
-  },
-];
-
 const questionTopics = [
   {
     title: "Data Structures & Algorithms",
@@ -47,18 +39,34 @@ const questionTopics = [
 ];
 
 export default function Navigation() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      console.log("User signed out");
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
+
   return (
     <nav className="flex justify-end p-8">
       <NavigationMenu>
         <NavigationMenuList>
-          {/* Render the "Home" navigation item */}
-          {navigationItems.map((item) => (
-            <NavigationMenuItem key={item.title}>
-              <Link to={item.href} className={navigationMenuTriggerStyle()}>
-                {item.title}
-              </Link>
-            </NavigationMenuItem>
-          ))}
+          {/* Home Navigation Item */}
+          <NavigationMenuItem>
+            <Link to="/" className={navigationMenuTriggerStyle()}>
+              Home
+            </Link>
+          </NavigationMenuItem>
 
           {/* Dropdown for Question Topics */}
           <NavigationMenuItem>
@@ -77,8 +85,26 @@ export default function Navigation() {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
+
+          {/* Conditional Login/Sign Out Item */}
           <NavigationMenuItem>
-            <ThemeToggle/>
+            {user ? (
+              <button
+                onClick={handleSignOut}
+                className={navigationMenuTriggerStyle()}
+              >
+                Sign Out
+              </button>
+            ) : (
+              <Link to="/login" className={navigationMenuTriggerStyle()}>
+                Login
+              </Link>
+            )}
+          </NavigationMenuItem>
+
+          {/* Theme Toggle */}
+          <NavigationMenuItem>
+            <ThemeToggle />
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

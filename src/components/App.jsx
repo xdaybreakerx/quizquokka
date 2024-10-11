@@ -1,3 +1,5 @@
+import { ToastContainer } from "react-toastify"; // used for auth notifications
+import 'react-toastify/dist/ReactToastify.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 
@@ -44,6 +46,7 @@ function App() {
   return (
     <>
       <RouterProvider router={appRouter} />
+      <ToastContainer  position="bottom-right"/> 
     </>
   );
 }

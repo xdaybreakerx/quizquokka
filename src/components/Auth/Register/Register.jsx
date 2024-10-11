@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createUser } from "../auth";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,23 +11,28 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { toast } from 'react-toastify';
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleRegister = async () => {
     setLoading(true);
-    setError(null); // Reset any previous error
+    setError(null);
 
     try {
       await createUser(email, password);
       console.log("User registered successfully!");
+      toast.success("Account created successfully!");
+      navigate("/login"); // Redirect to login page after successful registration
     } catch (err) {
       setError(err.message);
       console.error("Registration failed:", err);
+      toast.error("Registration failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -65,7 +70,11 @@ export default function Register() {
             />
           </div>
           {error && <p style={{ color: "red" }}>{error}</p>}
-          <Button onClick={handleRegister} className="w-full" disabled={loading}>
+          <Button
+            onClick={handleRegister}
+            className="w-full"
+            disabled={loading}
+          >
             {loading ? "Creating account..." : "Register"}
           </Button>
         </div>
@@ -79,3 +88,5 @@ export default function Register() {
     </Card>
   );
 }
+
+

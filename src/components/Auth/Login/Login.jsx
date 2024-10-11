@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,23 +11,28 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { signInUser, signInWithGoogle } from "../auth";
+import { toast } from "react-toastify";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); 
 
   const handleLogin = async () => {
     setLoading(true);
-    setError(null); 
+    setError(null);
 
     try {
       await signInUser(email, password);
       console.log("User logged in successfully!");
+      toast.success("Logged In successfully!");
+      navigate("/"); // Redirect to homepage after successful login
     } catch (err) {
       setError(err.message);
       console.error("Login failed:", err);
+      toast.error("Login failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -35,11 +40,12 @@ export default function LoginForm() {
 
   const handleGoogleSignIn = async () => {
     setLoading(true);
-    setError(null); 
+    setError(null);
 
     try {
       await signInWithGoogle();
       console.log("User signed in with Google!");
+      navigate("/"); // Redirect to homepage after successful Google sign-in
     } catch (err) {
       setError(err.message);
       console.error("Google sign-in failed:", err);
