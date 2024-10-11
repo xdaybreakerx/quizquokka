@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FlashCard from "@/components/FlashCard/FlashCard";
 import {
   Pagination,
@@ -12,6 +12,13 @@ import {
 export default function FlashCardController({ questionBank }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeTab, setActiveTab] = useState("question"); // Track the active tab
+
+  // Reset currentIndex when questionBank is updated
+  useEffect(() => {
+    if (questionBank.length > 0) {
+      setCurrentIndex(0); // Reset to the first card
+    }
+  }, [questionBank]);
 
   const nextCard = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % questionBank.length);
@@ -30,14 +37,20 @@ export default function FlashCardController({ questionBank }) {
     setActiveTab("question"); // Reset to question tab
   };
 
-  const { question, answer } = questionBank[currentIndex];
+  // Check if the questionBank has cards
+  if (questionBank.length === 0) {
+    return <p>No flashcards available. Please add some.</p>;
+  }
+
+  // Ensure the currentIndex is valid before destructuring
+  const { question, answer } = questionBank[currentIndex] || {};
 
   return (
     <div>
       <FlashCard
         question={question}
         answer={answer}
-        activeTab={activeTab} 
+        activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
       <Pagination>
