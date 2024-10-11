@@ -1,5 +1,13 @@
 import { useState } from "react";
 
+
+/**
+ * A function that retrieves an explanation for a given question and answer pair by making a POST request to an external API. It updates the state with the fetched explanation, loading status, and error message as needed. It returns an object containing the getExplanation function, the fetched explanation, loading status, and any error message encountered during the process.
+ * @author Xander
+ *
+ * @export
+ * @returns {{ getExplanation: (question: any, answer: any) => any; explanation: any; loading: any; error: any; }} A function that retrieves an explanation for a given question and answer by making a POST request to an external API. It sets the explanation, loading status, and error state based on the response received.
+ */
 export function useExplainAnswer() {
   const [explanation, setExplanation] = useState(null);
   const [loading, setLoading] = useState(false);

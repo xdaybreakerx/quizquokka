@@ -3,6 +3,14 @@ import FlashCardController from "@/components/FlashCardController/FlashCardContr
 import { ProgressBarWrapper } from "@/components/ProgressBarWrapper/ProgressBarWrapper";
 import { useFetchFlashcards } from "@/hooks/useFetchFlashCards";
 
+
+/**
+ * A default functional component to render a page for Data Structures and Algorithms (DSA). It fetches flashcards related to DSA using useFetchFlashcards, and renders a layout with a title, progress bar wrapper, and FlashCardController component.
+ * @author Xander
+ *
+ * @export
+ * @returns {*} A React component for the Data Structures & Algorithms (DSA) page. Displays a layout with a title, progress bar, and flashcards retrieved from a fetch operation.
+ */
 export default function DSAPage() {
   const {
     data: flashcards,

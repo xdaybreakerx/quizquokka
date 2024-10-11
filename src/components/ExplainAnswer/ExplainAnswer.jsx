@@ -11,6 +11,17 @@ import {
 import { Button } from "@/components/ui/button";
 import { useExplainAnswer } from "@/hooks/useGetExplanation";
 
+
+/**
+ * A function component that displays an alert dialog with an explanation for a given question and answer. It triggers a fetch for the explanation when a button is clicked showing loading status, error message, or the explanation itself. The user can continue after viewing the explanation.
+ * @author Xander
+ *
+ * @export
+ * @param {{ question: any; answer: any; }} param0 An object containing the question and answer
+ * @param {*} param0.question The question for which the explanation is needed
+ * @param {*} param0.answer The answer to the question
+ * @returns {*} Component that displays an alert dialog with a trigger button to fetch and display an explanation for a given question and answer.
+ */
 export function AnswerAlert({ question, answer }) {
   const { getExplanation, explanation, loading, error } = useExplainAnswer();
 

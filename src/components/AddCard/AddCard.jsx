@@ -37,6 +37,15 @@ const FormSchema = z.object({
     }),
 });
 
+
+/**
+ * Async function that saves a flashcard to Firestore if the user is logged in. It retrieves the current user authentication, then saves the provided question, answer, and user UID to the 'flashcards' collection in Firestore. It marks the flashcard as user-generated and displays a success toast. If an error occurs, it logs the error and displays an error toast.
+ * @author Xander
+ *
+ * @async
+ * @param {*} data An object containing question and answer for the flashcard
+ * @returns {*} Asynchronous function that saves a new flashcard to Firestore with question, answer, and user ID. Displays success/error toasts based on submission outcome.
+ */
 export function AddFlashCardForm() {
   const form = useForm({
     resolver: zodResolver(FormSchema),

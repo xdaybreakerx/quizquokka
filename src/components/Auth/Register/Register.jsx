@@ -13,6 +13,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from 'react-toastify';
 
+
+/**
+ * This function handles the registration process. It sets up state variables for email, password, error, and loading. It uses async/await to create a new user with the provided email and password. If successful, it logs a success message, displays a success toast, and redirects to the login page. If there is an error during registration, it logs the error, displays an error toast, and sets the error state. Finally, it updates the loading state accordingly. The function returns JSX elements for a registration form with email and password inputs, error message display, and a register button.
+ * @author Xander
+ *
+ * @export
+ * @returns {*} A function component used for user registration. It handles the registration process by creating a user account with the provided email and password. Displays a form for entering email and password, with error handling for registration failures. Allows users to navigate to the login page after successful registration.
+ */
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

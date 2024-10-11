@@ -1,6 +1,15 @@
 import React from "react";
 import Layout from "@/components/Layout/Layout";
 
+
+/**
+ * A class called ErrorBoundary that extends React.Component. ErrorBoundary does not support function components. It handles errors in its children components. It has a constructor that sets the initial state with hasError set to false. It has a static method getDerivedStateFromError that returns the updated state with hasError set to true when an error occurs. It has a method componentDidCatch that logs the error and error information to the console. It has a render method that renders the children components if no error has occurred, or a layout with an error message if an error has occurred.
+ * @author Xander
+ *
+ * @class ErrorBoundary
+ * @typedef {ErrorBoundary}
+ * @extends {React.Component}
+ */
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);

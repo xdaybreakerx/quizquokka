@@ -14,7 +14,16 @@ import {
 import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 import { toast } from "react-toastify";
 
-// Define the question topics navigation items in an array
+
+/**
+ * An array containing objects with properties representing different question topics. Each object has the following properties:
+ * - title: The title of the question topic.
+ * - href: The URL path to access more information about the question topic.
+ * - description: A short description of the question topic to provide an overview.
+ * @author Xander
+ *
+ * @type {{}}
+ */
 const questionTopics = [
   {
     title: "Data Structures & Algorithms",
@@ -38,6 +47,14 @@ const questionTopics = [
   },
 ];
 
+
+/**
+ * This is a function component for the Navigation menu in the application. It includes state management for the current user, an effect hook to handle user authentication changes, and a function to sign the user out. The component renders a navigation menu with various navigation items such as Home, Question Topics with a dropdown, Login/Sign Out option based on the user's authentication status, and a Theme Toggle option.
+ * @author Xander
+ *
+ * @export
+ * @returns {*} A functional component for navigation that includes a menu with various navigation items such as Home, Question Topics with dropdown, Login/Sign Out option, and Theme Toggle. It also handles user authentication and sign out functionality.
+ */
 export default function Navigation() {
   const [user, setUser] = useState(null);
 
@@ -129,7 +146,13 @@ export default function Navigation() {
   );
 }
 
-// ListItem Component
+
+/**
+ * A functional component that renders a list item with a link. It accepts props such as className, title, children, href, and additional props. It uses React.forwardRef to pass a ref to the underlying link element. The component renders an 'li' element containing a Link component with specified props and children elements.
+ * @author Xander
+ *
+ * @type {*}
+ */
 const ListItem = React.forwardRef(
   ({ className, title, children, href, ...props }, ref) => {
     return (

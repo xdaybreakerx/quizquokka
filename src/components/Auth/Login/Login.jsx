@@ -13,6 +13,14 @@ import { Label } from "@/components/ui/label";
 import { signInUser, signInWithGoogle } from "../auth";
 import { toast } from "react-toastify";
 
+
+/**
+ * A functional component for rendering a login form with email and password fields, and options to login using email/password or Google account. It handles the form submission, error handling, loading state, and navigation after successful login. Includes methods for handling regular login and Google sign-in. Utilizes useState for managing email, password, error, and loading state, as well as react-router's useNavigate for navigation. The UI components include Card, CardHeader, CardTitle, CardDescription, CardContent, Label, Input, Link, Button, and Link for user interaction. Supports redirection to homepage after successful login or Google sign-in.
+ * @author Xander
+ *
+ * @export
+ * @returns {*} A function component for rendering a login form with email and password fields, login and Google sign-in buttons. Includes handling login and Google sign-in operations, displaying error messages, and redirecting users after successful login or sign-in.
+ */
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

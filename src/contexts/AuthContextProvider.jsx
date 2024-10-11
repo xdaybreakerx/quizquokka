@@ -3,7 +3,13 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const AuthContext = createContext();
 
-// Custom hook to use AuthContext
+
+/**
+ * Returns the current context value of the AuthContext.
+ * @author Xander
+ *
+ * @returns {*} Returns the value of the authentication context
+ */
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthContextProvider = ({ children }) => {

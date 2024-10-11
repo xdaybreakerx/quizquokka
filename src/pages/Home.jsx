@@ -10,6 +10,17 @@ import {
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContextProvider";
 
+
+/**
+ * Creates a Category Card component with the given title, description, and link. The card includes a title, description, and a button to start learning with a provided link.
+ * @author Xander
+ *
+ * @param {{ title: any; description: any; link: any; }} param0 Object containing category card information
+ * @param {*} param0.title Title of the category card
+ * @param {*} param0.description Description of the category card
+ * @param {*} param0.link Link for the category card
+ * @returns {*} A function that returns JSX for a category card component with a title, description, and a link to start learning
+ */
 function CategoryCard({ title, description, link }) {
   return (
     <Card className="w-full h-full flex flex-col justify-between">
@@ -26,6 +37,14 @@ function CategoryCard({ title, description, link }) {
   );
 }
 
+
+/**
+ * A function that represents the home page component of the QuizQuokka application. It renders a layout with the QuizQuokka header, description, and flashcard categories. It also includes conditional rendering for custom flash cards based on the user's authentication status.
+ * @author Xander
+ *
+ * @export
+ * @returns {*} A function representing the home page of the QuizQuokka application, displaying various flashcard categories based on user authentication status.
+ */
 export default function HomePage() {
   const { user } = useAuth();
 

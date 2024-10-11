@@ -5,6 +5,14 @@ import { SunIcon, MoonIcon} from "@radix-ui/react-icons"
 
 import { useTheme } from "@/contexts/ThemeContextProvider";
 
+
+/**
+ * Function that renders a theme toggle button to switch between light and dark themes.
+ * @author Xander
+ *
+ * @export
+ * @returns {*} Function that toggles the theme between light and dark mode when called
+ */
 export function ThemeToggle() {
     const { setTheme, theme } = useTheme()
   

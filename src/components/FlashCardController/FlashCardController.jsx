@@ -4,11 +4,20 @@ import {
   Pagination,
   PaginationContent,
   PaginationItem,
-  PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
+
+/**
+ * A controller function for managing flashcards. Controls the display of flashcards from a question bank. Provides functionality to navigate to the next and previous flashcards, and handle pagination clicks. Resets the current index when the question bank is updated. Handles cases where no flashcards are available. Ensures the current index is valid before displaying the flashcard content.
+ * @author Xander
+ *
+ * @export
+ * @param {{ questionBank: any; }} param0 An object containing the questionBank array
+ * @param {*} param0.questionBank
+ * @returns {*} A controller function for managing flashcards. Includes functions for navigating to the next and previous flashcards, handling pagination clicks, and rendering the flashcard and pagination components based on the current index and question bank data.
+ */
 export default function FlashCardController({ questionBank }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeTab, setActiveTab] = useState("question"); // Track the active tab

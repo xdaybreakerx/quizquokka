@@ -3,16 +3,18 @@ import "react-toastify/dist/ReactToastify.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 
+import LoginPage from "@/pages/Login";
+import SignUpPage from "@/pages/SignUp";
+
 import HomePage from "@/pages/Home";
 import DSAPage from "@/pages/DSA";
 import PythonPage from "@/pages/Python";
 import JavaScriptPage from "@/pages/JavaScript";
 import ReactPage from "@/pages/React";
 
-import LoginPage from "@/pages/Login";
-import SignUpPage from "@/pages/SignUp";
 import AddCardPage from "@/pages/AddCustomCard";
 import CustomCardPage from "@/pages/ViewCustomCards";
+
 import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 import ErrorPage from "@/pages/ErrorPage";
 
@@ -58,6 +60,7 @@ const appRouter = createBrowserRouter([
     element: <ErrorPage />, 
   },
 ]);
+
 function App() {
   return (
     <ErrorBoundary>
