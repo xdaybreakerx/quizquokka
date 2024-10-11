@@ -1,7 +1,6 @@
 import { ToastContainer } from "react-toastify"; // used for auth notifications
 import "react-toastify/dist/ReactToastify.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.css";
 
 import LoginPage from "@/pages/Login";
 import SignUpPage from "@/pages/SignUp";
