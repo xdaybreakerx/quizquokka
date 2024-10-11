@@ -1,6 +1,6 @@
 # 👩‍🏫 QuizQuokka 🧑‍🏫
 
-Master your knowledge with engaging flashcards on Data Structures & Algorithms, Python, JavaScript, React, and more!
+Master your knowledge with engaging flashcards on Data Structures & Algorithms, Python, JavaScript, React, and more! Logged in users can also make their own flash cards for future study.
 
 ## 🔥 Features
 
